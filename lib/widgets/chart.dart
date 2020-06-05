@@ -23,7 +23,8 @@ class Chart extends StatelessWidget {
         }
       }
       return {
-        'day': DateFormat.E('es_ES').format(weekDay).substring(0, 1).toUpperCase(),
+        'day':
+            DateFormat.E('es_ES').format(weekDay).substring(0, 1).toUpperCase(),
         'amount': totalSum
       };
     }).reversed.toList();
@@ -48,11 +49,11 @@ class Chart extends StatelessWidget {
             return Flexible(
               fit: FlexFit.tight,
               child: ChartBar(
-              data['day'],
-              data['amount'],
-              totalSpending == 0.0
-                  ? 0.0
-                  : (data['amount'] as double) / totalSpending),
+                  data['day'],
+                  data['amount'],
+                  totalSpending == 0.0
+                      ? 0.0
+                      : (data['amount'] as double) / totalSpending),
             );
           }).toList(),
         ),
